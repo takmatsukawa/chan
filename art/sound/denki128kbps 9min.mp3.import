@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b753pxcd2vyyq"
+path="res://.godot/imported/denki128kbps 9min.mp3-9f00f5b8b01f59ab6e39e4527241b8c2.mp3str"
+
+[deps]
+
+source_file="res://art/sound/denki128kbps 9min.mp3"
+dest_files=["res://.godot/imported/denki128kbps 9min.mp3-9f00f5b8b01f59ab6e39e4527241b8c2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

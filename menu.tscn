@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhqd5sjw8fafg"]
+
+[ext_resource type="Texture2D" uid="uid://cplokx7acnrme" path="res://art/image/menu02.png" id="1_nwtjb"]
+
+[node name="Menu" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -707.5
+offset_top = -517.0
+offset_right = 707.5
+offset_bottom = 517.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nwtjb")
+stretch_mode = 4
