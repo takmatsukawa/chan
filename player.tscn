@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnokx0psphl3b"]
+
+[ext_resource type="Texture2D" uid="uid://bqqfbxnsvcfgf" path="res://art/image/body4.png" id="1_jquxl"]
+[ext_resource type="Script" path="res://player.gd" id="1_vrxst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ifj34"]
+atlas = ExtResource("1_jquxl")
+region = Rect2(0, 0, 115, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u768"]
+atlas = ExtResource("1_jquxl")
+region = Rect2(115, 0, 115, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eifcw"]
+atlas = ExtResource("1_jquxl")
+region = Rect2(230, 0, 115, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmauk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifj34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u768")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eifcw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u768")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ifj34")
+}],
+"loop": false,
+"name": &"swing",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04fdb"]
+size = Vector2(82.6667, 150)
+
+[node name="Player" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_vrxst")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bmauk")
+animation = &"swing"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_04fdb")

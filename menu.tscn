@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhqd5sjw8fafg"]
+[gd_scene load_steps=7 format=3 uid="uid://bhqd5sjw8fafg"]
 
+[ext_resource type="Script" path="res://menu.gd" id="1_8a3cm"]
 [ext_resource type="Texture2D" uid="uid://cplokx7acnrme" path="res://art/image/menu02.png" id="1_nwtjb"]
+[ext_resource type="Texture2D" uid="uid://blcetovevwdj7" path="res://art/image/menu-play01.png" id="2_k0fjc"]
+[ext_resource type="Texture2D" uid="uid://bxf6tlcuoj32w" path="res://art/image/menu-play02.png" id="3_d6afn"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_txl0d"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_dttib"]
+events = [SubResource("InputEventAction_txl0d")]
 
 [node name="Menu" type="Node"]
+script = ExtResource("1_8a3cm")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,7 +22,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="MenuBody" type="TextureRect" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,3 +36,15 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_nwtjb")
 stretch_mode = 4
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 414.0
+offset_top = 685.0
+offset_right = 742.0
+offset_bottom = 819.0
+shortcut = SubResource("Shortcut_dttib")
+texture_normal = ExtResource("2_k0fjc")
+texture_hover = ExtResource("3_d6afn")
+stretch_mode = 4
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
