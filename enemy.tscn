@@ -28,12 +28,13 @@ animations = [{
 size = Vector2(162, 452)
 
 [node name="Enemy" type="Area2D"]
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_5nesa")
 animation = &"walk"
-frame_progress = 0.490284
+frame_progress = 0.254096
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_me8wl")
