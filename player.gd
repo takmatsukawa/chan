@@ -11,3 +11,4 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.stop()
 		$AnimatedSprite2D.flip_h = true
 		$AnimatedSprite2D.play()
+		

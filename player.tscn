@@ -35,7 +35,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"swing",
-"speed": 10.0
+"speed": 13.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_04fdb"]
@@ -49,6 +49,8 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bmauk")
 animation = &"swing"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_04fdb")
