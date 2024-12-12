@@ -17,7 +17,7 @@ func start_animation() -> void:
 	$AnimatedSprite2D.play()
 	
 func stop() -> void:
-	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.pause()
 	linear_velocity = Vector2.ZERO
 	speed = 0
 	

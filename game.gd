@@ -9,6 +9,8 @@ func new_game():
 	$EnemyTimer.start()
 
 func game_over():
+	$Player.stop()
+	$BGM.stop()
 	$DeathSound.play()
 	$EnemyTimer.stop()
 	get_tree().call_group("enemies", "stop")

@@ -8,6 +8,7 @@ func _ready() -> void:
 	tween1.tween_property($Title, "modulate", Color.WHITE, .1)
 	
 	await get_tree().create_timer(1.5).timeout
+	
 	var tween2 = get_tree().create_tween()
 	tween2.tween_property($Title, "modulate", Color.TRANSPARENT, .2)
 
