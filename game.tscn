@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxv60c2tpt3n1"]
+[gd_scene load_steps=5 format=3 uid="uid://bxv60c2tpt3n1"]
 
 [ext_resource type="PackedScene" uid="uid://bnokx0psphl3b" path="res://player.tscn" id="1_ewkvm"]
 [ext_resource type="Script" path="res://game.gd" id="1_h3nax"]
 [ext_resource type="PackedScene" uid="uid://4gs0t04sslyf" path="res://enemy.tscn" id="2_ys30v"]
+[ext_resource type="AudioStream" uid="uid://de2s3afxt6l50" path="res://art/sound/Owata.ogg" id="4_1d5v2"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_h3nax")
@@ -27,4 +28,8 @@ position = Vector2(0, 540)
 [node name="RightSpawnLocation" type="Marker2D" parent="."]
 position = Vector2(1920, 540)
 
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1d5v2")
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

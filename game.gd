@@ -5,11 +5,13 @@ extends Node
 func _ready():
 	new_game()
 	
-func game_over():
-	$EnemyTimer.stop()
-	
 func new_game():
 	$EnemyTimer.start()
+
+func game_over():
+	$DeathSound.play()
+	$EnemyTimer.stop()
+	get_tree().call_group("enemies", "stop")
 
 func _on_enemy_timer_timeout() -> void:
 	var enemy = enemy_scene.instantiate()
@@ -22,3 +24,7 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.start_animation()
 	
 	add_child(enemy)
+
+
+func _on_player_hit() -> void:
+	game_over()

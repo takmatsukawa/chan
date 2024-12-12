@@ -16,5 +16,14 @@ func turn(dir: Direction) -> void:
 func start_animation() -> void:
 	$AnimatedSprite2D.play()
 	
-func _process(delta):
-	position.x += speed * delta * (1 if direction == Direction.RIGHT else -1)
+func stop() -> void:
+	$AnimatedSprite2D.stop()
+	linear_velocity = Vector2.ZERO
+	speed = 0
+	
+func _ready():
+	linear_velocity = Vector2(speed * (1 if direction == Direction.RIGHT else -1), 0)
+
+func _integrate_forces(state):
+	# 速度を一定に保つ
+	state.linear_velocity = Vector2(speed * (1 if direction == Direction.RIGHT else -1), 0)
