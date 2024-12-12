@@ -26,11 +26,11 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.position = location.position
 	
 	enemy.turn($Player.global_position.x < enemy.global_position.x)
-
-	enemy.start_animation()
 	
 	add_child(enemy)
 
-
-func _on_player_hit() -> void:
+func _on_player_hit_by_enemy() -> void:
 	game_over()
+
+func _on_player_hit(enemy: Node2D) -> void:
+	enemy.death()

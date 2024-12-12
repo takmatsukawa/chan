@@ -24,10 +24,10 @@ position = Vector2(960, 540)
 [node name="EnemyTimer" type="Timer" parent="."]
 
 [node name="LeftSpawnLocation" type="Marker2D" parent="."]
-position = Vector2(0, 540)
+position = Vector2(-100, 540)
 
 [node name="RightSpawnLocation" type="Marker2D" parent="."]
-position = Vector2(1920, 540)
+position = Vector2(2020, 540)
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_1d5v2")
@@ -37,4 +37,5 @@ stream = ExtResource("5_4516d")
 autoplay = true
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="hit_by_enemy" from="Player" to="." method="_on_player_hit_by_enemy"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

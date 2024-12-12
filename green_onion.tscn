@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://wvkftgpagm2c"]
+
+[ext_resource type="Script" path="res://green_onion.gd" id="1_4qo1t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0fcb6"]
+size = Vector2(18, 194)
+
+[node name="GreenOnion" type="Area2D"]
+script = ExtResource("1_4qo1t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0fcb6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
