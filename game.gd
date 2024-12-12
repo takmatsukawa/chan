@@ -12,6 +12,10 @@ func game_over():
 	$DeathSound.play()
 	$EnemyTimer.stop()
 	get_tree().call_group("enemies", "stop")
+	
+	await get_tree().create_timer(1.5).timeout
+	
+	SceneSwitcher.switch_scene("res://menu.tscn")
 
 func _on_enemy_timer_timeout() -> void:
 	var enemy = enemy_scene.instantiate()
