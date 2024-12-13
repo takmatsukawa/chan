@@ -41,6 +41,18 @@ autoplay = true
 [node name="HitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_fh6eb")
 
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 61.0
+offset_right = 20.0
+offset_bottom = 149.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "0"
+
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="hit_by_enemy" from="Player" to="." method="_on_player_hit_by_enemy"]
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

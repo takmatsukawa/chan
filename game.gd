@@ -2,11 +2,14 @@ extends Node
 
 @export var enemy_scene: PackedScene
 
+var score = 0
+
 func _ready():
 	new_game()
 	
 func new_game():
 	$EnemyTimer.start()
+	$ScoreLabel.text = str(score)
 
 func game_over():
 	$Player.stop()
@@ -36,5 +39,8 @@ func _on_player_hit_by_enemy() -> void:
 	game_over()
 
 func _on_player_hit(enemy: Node2D) -> void:
-	$HitSound.play()
-	enemy.death()
+	if (!enemy.is_dying()):
+		$HitSound.play()
+		enemy.death()
+		score += 1
+		$ScoreLabel.text = str(score)

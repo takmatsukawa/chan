@@ -42,3 +42,6 @@ func death():
 		apply_central_impulse(Vector2(0, -1000))
 		await get_tree().create_timer(2).timeout
 		queue_free()
+
+func is_dying() -> bool:
+	return state == State.DYING
