@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxv60c2tpt3n1"]
+[gd_scene load_steps=8 format=3 uid="uid://bxv60c2tpt3n1"]
 
 [ext_resource type="PackedScene" uid="uid://bnokx0psphl3b" path="res://player.tscn" id="1_ewkvm"]
 [ext_resource type="Script" path="res://game.gd" id="1_h3nax"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dk3ocbi28rbtt" path="res://art/sound/Aan.ogg" id="4_seu3j"]
 [ext_resource type="AudioStream" uid="uid://cahh7d6k1t04r" path="res://art/sound/Yaminabe.ogg" id="5_4516d"]
 [ext_resource type="AudioStream" uid="uid://brxaalop1egs2" path="res://art/sound/puu77_a.ogg" id="6_fh6eb"]
+[ext_resource type="FontFile" uid="uid://dd8toq3bwxjvg" path="res://font/Super-Mario-World.ttf" id="7_avx73"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_h3nax")
@@ -50,6 +51,7 @@ offset_top = 61.0
 offset_right = 20.0
 offset_bottom = 149.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_avx73")
 theme_override_font_sizes/font_size = 90
 text = "0"
 
